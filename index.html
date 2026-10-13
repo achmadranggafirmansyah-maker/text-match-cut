@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- ==================== SEO ==================== -->
+<title>Text Match Cut Video Generator — Gratis, Unlimited, Tanpa Watermark</title>
+<meta name="description" content="Buat video Text Match Cut gaya headline berita langsung di browser. Gratis, unlimited, tanpa watermark, tanpa login. Render & download MP4/WebM secara instan." />
+<meta name="keywords" content="text match cut, video generator, newspaper effect, video montage, headline video, free video maker, no watermark, browser video editor, canvas video, mediaRecorder" />
+<meta name="author" content="Text Match Cut" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#FFD84D" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://your-domain.com/" />
+
+<!-- ==================== Open Graph (Facebook, WhatsApp, LinkedIn) ==================== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Text Match Cut" />
+<meta property="og:url" content="https://your-domain.com/" />
+<meta property="og:title" content="Text Match Cut Video Generator — Gratis & Unlimited" />
+<meta property="og:description" content="Bikin video match cut gaya headline berita dalam hitungan detik. 100% browser-based, gratis, tanpa watermark." />
+<meta property="og:image" content="https://your-domain.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Text Match Cut Video Generator Preview" />
+<meta property="og:locale" content="id_ID" />
+
+<!-- ==================== Twitter Card ==================== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Text Match Cut Video Generator — Gratis & Unlimited" />
+<meta name="twitter:description" content="Bikin video match cut gaya headline berita. 100% browser-based, gratis, tanpa watermark." />
+<meta name="twitter:image" content="https://your-domain.com/og-image.png" />
+
+<!-- ==================== PWA / Mobile ==================== -->
+<meta name="application-name" content="Text Match Cut" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Text Match Cut" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- ==================== Favicon (inline SVG, tanpa file eksternal) ==================== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FFD84D'/%3E%3Ctext x='50' y='70' font-size='54' font-family='Arial,Helvetica,sans-serif' font-weight='900' text-anchor='middle' fill='%230b0c0e'%3ETM%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23FFD84D'/%3E%3Ctext x='90' y='126' font-size='96' font-family='Arial,Helvetica,sans-serif' font-weight='900' text-anchor='middle' fill='%230b0c0e'%3ETM%3C/text%3E%3C/svg%3E" />
+<link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FFD84D'/%3E%3Ctext x='50' y='70' font-size='54' font-family='Arial,sans-serif' font-weight='900' text-anchor='middle' fill='%230b0c0e'%3ETM%3C/text%3E%3C/svg%3E" color="#FFD84D" />
+
+<!-- ==================== PWA Manifest ==================== -->
+<link rel="manifest" href="manifest.json" />
+
+<!-- ==================== Fonts & Tailwind ==================== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<style>
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0b0c0e;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #24272d; border-radius: 99px; border: 2px solid #0e0f12; }
+  ::-webkit-scrollbar-thumb:hover { background: #33373f; }
+
+  .switch { position: relative; display: inline-block; width: 44px; height: 24px; flex: none; }
+  .switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .switch .slider {
+    position: absolute; inset: 0; background: #24272d; border-radius: 99px;
+    transition: background .18s ease; cursor: pointer;
+    border: 1px solid rgba(255,255,255,.06);
+  }
+  .switch .slider:before {
+    content: ""; position: absolute; height: 16px; width: 16px; left: 3px; top: 3px;
+    background: #7c828c; border-radius: 50%; transition: transform .18s ease, background .18s ease;
+  }
+  .switch input:checked + .slider { background: rgba(255,216,77,.92); border-color: rgba(255,216,77,.5); }
+  .switch input:checked + .slider:before { transform: translateX(20px); background: #101114; }
+
+  .seg {
+    display: flex; gap: 3px; padding: 3px; border-radius: 11px;
+    background: #16181d; border: 1px solid rgba(255,255,255,.05);
+  }
+  .seg button {
+    flex: 1 1 0; min-width: 0; padding: 7px 6px; border-radius: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: .02em;
+    color: #838a95; transition: all .15s ease; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .seg button:hover { color: #c9cdd4; }
+  .seg button.active {
+    background: #2b2f37; color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 20px; background: transparent; cursor: pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height: 5px; border-radius: 99px; background: #24272d; }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 15px; height: 15px; margin-top: -5px; border-radius: 50%;
+    background: #FFD84D; box-shadow: 0 0 0 4px rgba(255,216,77,.12);
+    transition: box-shadow .15s ease;
+  }
+  input[type=range]:hover::-webkit-slider-thumb { box-shadow: 0 0 0 6px rgba(255,216,77,.18); }
+  input[type=range]::-moz-range-track { height: 5px; border-radius: 99px; background: #24272d; }
+  input[type=range]::-moz-range-thumb {
+    width: 15px; height: 15px; border: none; border-radius: 50%; background: #FFD84D;
+    box-shadow: 0 0 0 4px rgba(255,216,77,.12);
+  }
+  input[type=range]:disabled { opacity: .4; cursor: not-allowed; }
+
+  .panel-label {
+    font-size: 10px; font-weight: 800; letter-spacing: .16em;
+    text-transform: uppercase; color: #6d7480;
+  }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; }
+  .row > span:first-child {
+    font-size: 11px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: #9aa1ac;
+  }
+  .val-badge {
+    font-size: 10px; font-weight: 700; color: #FFD84D;
+    background: rgba(255,216,77,.09); padding: 2px 7px; border-radius: 6px;
+    font-variant-numeric: tabular-nums; min-width: 44px; text-align: center;
+  }
+  .btn-primary {
+    background: #FFD84D; color: #0b0c0e; font-weight: 800;
+    transition: all .16s ease; box-shadow: 0 4px 18px rgba(255,216,77,.18);
+  }
+  .btn-primary:hover { background: #ffe27a; transform: translateY(-1px); box-shadow: 0 8px 26px rgba(255,216,77,.28); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-ghost {
+    background: #1a1c21; border: 1px solid rgba(255,255,255,.07); color: #c9cdd4;
+    font-weight: 700; transition: all .16s ease;
+  }
+  .btn-ghost:hover { background: #23262c; color: #fff; border-color: rgba(255,255,255,.14); }
+
+  .spinner {
+    width: 38px; height: 38px; margin: 0 auto;
+    border: 3px solid rgba(255,255,255,.12);
+    border-top-color: #FFD84D; border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  canvas#previewCanvas { display: block; }
+  .glow-ring { box-shadow: 0 0 0 1px rgba(255,255,255,.07), 0 24px 60px -18px rgba(0,0,0,.9); }
+
+  .fade-in { animation: fadeIn .28s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* Standalone PWA mode: hide header a bit tighter */
+  @media (display-mode: standalone) {
+    body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+  }
+</style>
+</head>
+
+<body class="h-full overflow-hidden text-neutral-200">
+
+<div class="h-full flex flex-col overflow-hidden">
+
+  <header class="h-14 shrink-0 border-b border-white/5 flex items-center justify-between px-4 lg:px-6 bg-[#0e0f12] z-20">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-[#FFD84D] text-black grid place-items-center font-black text-[13px] select-none">TM</div>
+      <div class="leading-none">
+        <div class="text-[13px] font-extrabold tracking-tight">Text Match Cut</div>
+        <div class="text-[10px] text-neutral-500 mt-1">Browser Video Generator</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 text-[10px] font-semibold text-neutral-500">
+      <span class="hidden sm:inline px-2.5 py-1 rounded-md bg-white/[.04] border border-white/5">100% Free</span>
+      <span class="hidden sm:inline px-2.5 py-1 rounded-md bg-white/[.04] border border-white/5">Unlimited</span>
+      <span class="px-2.5 py-1 rounded-md bg-white/[.04] border border-white/5">No Watermark</span>
+    </div>
+  </header>
+
+  <div id="viewStack" class="flex-1 min-h-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
+
+    <div id="editorView" class="flex-1 min-h-0 flex flex-col lg:flex-row">
+
+      <main class="flex-1 min-w-0 min-h-[62vh] lg:min-h-0 flex flex-col">
+
+        <div class="flex-1 min-h-0 flex items-center justify-center p-4 lg:p-6 bg-[#08090b] relative">
+          <canvas id="previewCanvas" class="max-h-full max-w-full rounded-lg glow-ring"></canvas>
+          <div id="canvasBadge"
+               class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur border border-white/10 text-[10px] font-bold tracking-wider text-neutral-300 pointer-events-none">
+            9:16 · 1080×1920
+          </div>
+        </div>
+
+        <div class="shrink-0 border-t border-white/5 bg-[#0e0f12] px-4 lg:px-5 py-3 space-y-3">
+
+          <div class="flex items-center gap-3 flex-wrap">
+            <div class="seg w-[210px]" id="aspectSeg" data-key="aspect">
+              <button data-value="9:16" class="active">9:16</button>
+              <button data-value="16:9">16:9</button>
+              <button data-value="1:1">1:1</button>
+            </div>
+
+            <button id="playBtn"
+                    class="btn-ghost w-9 h-9 rounded-lg grid place-items-center shrink-0"
+                    title="Play / Pause">
+              <svg id="playIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+
+            <div class="flex-1 min-w-[180px] flex items-center gap-3">
+              <input type="range" id="scrub" min="0" max="143" value="0" step="1" class="flex-1">
+              <span id="frameLabel" class="text-[11px] font-bold text-neutral-500 tabular-nums whitespace-nowrap w-[74px] text-right">001 / 144</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:items-stretch">
+            <div class="flex-1 min-w-0">
+              <label class="panel-label block mb-1.5">Target Keyword / Phrase</label>
+              <textarea id="textInput" rows="2" spellcheck="false"
+                class="w-full resize-none rounded-xl bg-[#16181d] border border-white/5 focus:border-[#FFD84D]/50 focus:ring-2 focus:ring-[#FFD84D]/10 outline-none px-3.5 py-2.5 text-[13px] font-semibold text-neutral-100 placeholder-neutral-600 transition"
+                placeholder="e.g. RUMUS 3 LANGKAH KAYA">RUMUS 3 LANGKAH KAYA</textarea>
+            </div>
+            <button id="createBtn"
+                    class="btn-primary rounded-xl px-6 py-3 text-[13px] tracking-wide shrink-0 sm:self-end sm:h-[46px]">
+              Create Text Match Cut
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <aside class="w-full lg:w-[360px] shrink-0 border-t lg:border-t-0 lg:border-l border-white/5 bg-[#0e0f12] lg:overflow-y-auto">
+        <div class="p-5 space-y-5">
+
+          <div class="flex items-center justify-between">
+            <h2 class="panel-label">Customize</h2>
+            <button id="resetBtn" class="text-[10px] font-bold tracking-wider text-neutral-500 hover:text-[#FFD84D] transition uppercase">Reset</button>
+          </div>
+
+          <div class="space-y-1">
+            <div class="row">
+              <span>Dark Theme</span>
+              <label class="switch"><input type="checkbox" id="tgDark" checked><span class="slider"></span></label>
+            </div>
+            <div class="row">
+              <span>Text Highlight</span>
+              <label class="switch"><input type="checkbox" id="tgHighlight" checked><span class="slider"></span></label>
+            </div>
+            <div class="row">
+              <span>Chromatic Aberration</span>
+              <label class="switch"><input type="checkbox" id="tgChroma" checked><span class="slider"></span></label>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/5"></div>
+
+          <div>
+            <label class="panel-label block mb-2">Highlight Color</label>
+            <div id="swatchRow" class="flex items-center gap-2">
+              <button class="swatch w-7 h-7 rounded-lg ring-2 ring-offset-2 ring-offset-[#0e0f12] transition" data-color="#FFD84D" style="background:#FFD84D"></button>
+              <button class="swatch w-7 h-7 rounded-lg ring-1 ring-white/10 transition" data-color="#FF5C5C" style="background:#FF5C5C"></button>
+              <button class="swatch w-7 h-7 rounded-lg ring-1 ring-white/10 transition" data-color="#4ADE80" style="background:#4ADE80"></button>
+              <button class="swatch w-7 h-7 rounded-lg ring-1 ring-white/10 transition" data-color="#38BDF8" style="background:#38BDF8"></button>
+              <button class="swatch w-7 h-7 rounded-lg ring-1 ring-white/10 transition" data-color="#FFFFFF" style="background:#FFFFFF"></button>
+              <button class="swatch w-7 h-7 rounded-lg ring-1 ring-white/10 transition" data-color="#111111" style="background:#111111"></button>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/5"></div>
+
+          <div>
+            <label class="panel-label block mb-2">Background Type</label>
+            <div class="seg" data-key="bgType">
+              <button data-value="static">Static</button>
+              <button data-value="dynamic" class="active">Dynamic</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="panel-label block mb-2">Background Style</label>
+            <div class="seg" data-key="bgStyle">
+              <button data-value="simple">Simple</button>
+              <button data-value="newspaper" class="active">Newspaper</button>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/5"></div>
+
+          <div>
+            <label class="panel-label block mb-2">Blur Type</label>
+            <div class="seg" data-key="blurType">
+              <button data-value="vertical">Vertical</button>
+              <button data-value="radial" class="active">Radial</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="panel-label block mb-2">Blur Intensity</label>
+            <div class="seg" data-key="blurIntensity">
+              <button data-value="low">Low</button>
+              <button data-value="medium" class="active">Medium</button>
+              <button data-value="high">High</button>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/5"></div>
+
+          <div>
+            <div class="row mb-2">
+              <span class="panel-label">Text Position &amp; Scale</span>
+            </div>
+
+            <div class="space-y-3.5">
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-semibold text-neutral-400">X-Axis Offset</span>
+                  <span class="val-badge" id="posXVal">0%</span>
+                </div>
+                <input type="range" id="posX" min="-100" max="100" value="0" step="1">
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-semibold text-neutral-400">Y-Axis Offset</span>
+                  <span class="val-badge" id="posYVal">0%</span>
+                </div>
+                <input type="range" id="posY" min="-100" max="100" value="0" step="1">
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-semibold text-neutral-400">Zoom / Scale</span>
+                  <span class="val-badge" id="zoomVal">100%</span>
+                </div>
+                <input type="range" id="zoom" min="50" max="200" value="100" step="1">
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1 pb-2">
+            <p class="text-[10px] leading-relaxed text-neutral-600">
+              Everything renders locally in your browser. No uploads, no accounts, no render limits.
+            </p>
+          </div>
+
+        </div>
+      </aside>
+    </div>
+
+    <div id="previewView" class="hidden flex-1 min-h-0 flex-col">
+      <div class="flex-1 min-h-0 flex items-center justify-center p-4 lg:p-6 bg-[#08090b]">
+        <video id="resultVideo" class="max-h-full max-w-full rounded-lg glow-ring bg-black"
+               playsinline loop muted controls></video>
+      </div>
+      <div class="shrink-0 border-t border-white/5 bg-[#0e0f12] px-4 py-4 flex items-center justify-center gap-3 flex-wrap">
+        <button id="backBtn" class="btn-ghost rounded-xl px-5 py-3 text-[12px]">← Back to Editor</button>
+        <button id="regenBtn" class="btn-ghost rounded-xl px-5 py-3 text-[12px]">↻ Re-render</button>
+        <button id="downloadBtn" class="btn-primary rounded-xl px-7 py-3 text-[12px]">⬇ Download MP4 Video</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="exportStage" style="position:fixed; left:-100000px; top:0; width:1px; height:1px; overflow:hidden; opacity:0.01; pointer-events:none;"></div>
+
+<div id="renderOverlay" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm items-center justify-center">
+  <div class="w-[360px] max-w-[90vw] rounded-2xl bg-[#141518] border border-white/10 p-7 text-center shadow-2xl">
+    <div class="spinner"></div>
+    <div class="mt-5 text-[13px] font-bold text-neutral-200">Rendering your video…</div>
+    <div class="mt-1 text-[11px] text-neutral-500">Encoding in real time, please keep this tab visible</div>
+    <div class="mt-5 h-1.5 rounded-full bg-white/8 overflow-hidden">
+      <div id="progressBar" class="h-full w-0 bg-[#FFD84D] transition-[width] duration-150 ease-linear"></div>
+    </div>
+    <div id="progressText" class="mt-2.5 text-[11px] font-bold text-neutral-500 tabular-nums">0%</div>
+  </div>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+const FPS            = 30;
+const CUT_FRAMES     = 6;
+const CUTS           = 24;
+const TOTAL_FRAMES   = CUT_FRAMES * CUTS;
+const BG_SCALE       = 0.6;
+const BASE_SEED      = 20240613;
+
+const ASPECTS = {
+  '9:16': { w: 1080, h: 1920 },
+  '16:9': { w: 1920, h: 1080 },
+  '1:1':  { w: 1080, h: 1080 }
+};
+
+const TARGET_FONT = '"Anton", "Archivo Black", Impact, "Arial Narrow", sans-serif';
+const SANS_FONT   = 'Inter, "Helvetica Neue", Arial, sans-serif';
+const SERIF_FONT  = '"Times New Roman", Georgia, serif';
+const HEAD_FONT   = '"Playfair Display", Georgia, "Times New Roman", serif';
+
+const $ = (sel) => document.querySelector(sel);
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function nz(n) {
+  const x = Math.sin(n * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+}
+
+function roundRect(g, x, y, w, h, r) {
+  const rr = Math.min(r, w / 2, h / 2);
+  g.beginPath();
+  g.moveTo(x + rr, y);
+  g.arcTo(x + w, y, x + w, y + h, rr);
+  g.arcTo(x + w, y + h, x, y + h, rr);
+  g.arcTo(x, y + h, x, y, rr);
+  g.arcTo(x, y, x + w, y, rr);
+  g.closePath();
+}
+
+const WORD_BANK = (
+  "langkah strategi metode analisis data riset laporan temuan sumber resmi " +
+  "kebijakan pemerintah ekonomi pasar modal investasi keuangan pertumbuhan inflasi suku bunga " +
+  "masyarakat kota desa wilayah negara dunia global krisis peluang tantangan perubahan " +
+  "teknologi digital sistem jaringan informasi komunikasi media sosial platform aplikasi " +
+  "pendidikan sekolah kampus mahasiswa guru ilmu pengetahuan budaya seni sejarah warisan " +
+  "kesehatan rumah sakit dokter pasien obat penelitian vaksin lingkungan iklim energi " +
+  "hukum keadilan pengadilan kasus investigasi penyelidikan bukti saksi korban " +
+  "perusahaan industri pabrik produksi ekspor impor perdagangan jaringan bisnis " +
+  "keluarga generasi muda pemuda anak perempuan peran sosial komunitas " +
+  "menurut hasil selama sekitar hampir lebih kurang sangat cukup besar kecil tinggi rendah " +
+  "baru lama cepat lambat kuat lemah utama khusus umum resmi tidak bisa harus akan telah " +
+  "the of and to in a is that for it with as was on be at by this from or an are " +
+  "dalam pada untuk dengan tanpa melalui terhadap antara serta namun karena sehingga"
+).split(/\s+/).filter(Boolean);
+
+const DEFAULTS = {
+  text: 'RUMUS 3 LANGKAH KAYA',
+  aspect: '9:16',
+  darkTheme: true,
+  highlight: true,
+  highlightColor: '#FFD84D',
+  chromatic: true,
+  bgType: 'dynamic',
+  bgStyle: 'newspaper',
+  blurType: 'radial',
+  blurIntensity: 'medium',
+  posX: 0,
+  posY: 0,
+  zoom: 100
+};
+
+const state = Object.assign({}, DEFAULTS);
+
+let dims = { W: 1080, H: 1920 };
+
+let previewCanvas, ctx;
+let bgCanvas, bgCtx;
+let fxCanvas, fxCtx;
+let bgCacheKey = null;
+
+let textLayer = null;
+let chR = null, chG = null, chB = null;
+let chCanvas = null, chCtx = null, chOffMax = 0;
+
+let measureCanvas, mctx;
+
+const noiseCache = {};
+let grainCache = null;
+const grainPatterns = new Map();
+
+const supportsFilter = (function () {
+  try {
+    const c = document.createElement('canvas').getContext('2d');
+    return typeof c.filter === 'string';
+  } catch (e) { return false; }
+})();
+
+let currentFrame = 0;
+let isPlaying = true;
+let dirty = true;
+let acc = 0;
+let lastTs = 0;
+
+const markDirty = () => { dirty = true; };
+
+function getNoise(dark) {
+  const key = dark ? 'dark' : 'light';
+  if (noiseCache[key]) return noiseCache[key];
+
+  const size = 256;
+  const c = document.createElement('canvas');
+  c.width = c.height = size;
+  const g = c.getContext('2d');
+  const img = g.createImageData(size, size);
+  const d = img.data;
+
+  for (let i = 0; i < d.length; i += 4) {
+    const r = Math.random();
+    let v, a = 0;
+    if (dark) {
+      v = 255;
+      if (r > 0.88) a = 12 + Math.random() * 48;
+      else if (r < 0.05) a = 8 + Math.random() * 26;
+    } else {
+      v = 0;
+      if (r > 0.88) a = 10 + Math.random() * 42;
+      else if (r < 0.05) a = 6 + Math.random() * 22;
+    }
+    d[i] = d[i + 1] = d[i + 2] = v;
+    d[i + 3] = a | 0;
+  }
+  g.putImageData(img, 0, 0);
+  noiseCache[key] = c;
+  return c;
+}
+
+function getGrain() {
+  if (grainCache) return grainCache;
+  const size = 160;
+  const c = document.createElement('canvas');
+  c.width = c.height = size;
+  const g = c.getContext('2d');
+  const img = g.createImageData(size, size);
+  const d = img.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const v = 96 + Math.random() * 64;
+    d[i] = d[i + 1] = d[i + 2] = v | 0;
+    d[i + 3] = 255;
+  }
+  g.putImageData(img, 0, 0);
+  grainCache = c;
+  return c;
+}
+
+function getGrainPattern(g) {
+  if (!grainPatterns.has(g)) {
+    grainPatterns.set(g, g.createPattern(getGrain(), 'repeat'));
+  }
+  return grainPatterns.get(g);
+}
+
+function makeLine(g, maxW, rnd, spaceW, minWords, maxWords) {
+  minWords = minWords || 4;
+  maxWords = maxWords || 12;
+  const target = minWords + Math.floor(rnd() * (maxWords - minWords + 1));
+  let out = '';
+  let wdt = 0;
+
+  for (let n = 0; n < target; n++) {
+    const word = WORD_BANK[(rnd() * WORD_BANK.length) | 0];
+    const ww = g.measureText(word).width + (n ? spaceW : 0);
+    if (n > 0 && wdt + ww > maxW) break;
+    out += (n ? ' ' : '') + word;
+    wdt += ww;
+  }
+  return out || WORD_BANK[(rnd() * WORD_BANK.length) | 0];
+}
+
+function pickWords(rnd, min, max) {
+  const n = min + Math.floor(rnd() * (max - min + 1));
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(WORD_BANK[(rnd() * WORD_BANK.length) | 0]);
+  return out.join(' ');
+}
+
+function renderNewspaper(g, w, h, seed, s) {
+  const rnd = mulberry32(seed);
+  const dark = s.darkTheme;
+
+  const paper = dark ? '#101216' : '#f1ebdf';
+  const ink   = dark ? '#e9ecf1' : '#12100e';
+  const body  = dark ? 'rgba(233,236,241,0.60)' : 'rgba(18,16,14,0.74)';
+  const rule  = dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.26)';
+
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.textBaseline = 'alphabetic';
+
+  g.fillStyle = paper;
+  g.fillRect(0, 0, w, h);
+
+  const noise = getNoise(dark);
+  g.save();
+  g.globalAlpha = dark ? 0.55 : 0.6;
+  g.fillStyle = g.createPattern(noise, 'repeat');
+  g.fillRect(0, 0, w, h);
+  g.restore();
+
+  for (let i = 0; i < 14; i++) {
+    const bx = rnd() * w, by = rnd() * h, br = h * (0.03 + rnd() * 0.09);
+    const bg = g.createRadialGradient(bx, by, 0, bx, by, br);
+    bg.addColorStop(0, dark ? 'rgba(255,255,255,0.020)' : 'rgba(120,90,40,0.045)');
+    bg.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = bg;
+    g.beginPath();
+    g.arc(bx, by, br, 0, Math.PI * 2);
+    g.fill();
+  }
+
+  const margin = w * 0.055;
+  const innerW = w - margin * 2;
+  let y = h * 0.035;
+
+  g.fillStyle = rule;
+  g.fillRect(margin, y, innerW, Math.max(1, h * 0.0014));
+  y += h * 0.019;
+
+  g.textAlign = 'center';
+  g.fillStyle = ink;
+  g.font = '900 ' + (h * 0.042).toFixed(1) + 'px ' + HEAD_FONT;
+  g.fillText(pickWords(rnd, 2, 3).toUpperCase(), w / 2, y + h * 0.038);
+  y += h * 0.055;
+
+  g.fillStyle = rule;
+  g.fillRect(margin, y, innerW, 1);
+  y += h * 0.015;
+
+  const days = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT', 'SABTU', 'MINGGU'];
+  const months = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI',
+                  'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER'];
+  g.font = '600 ' + (h * 0.0118).toFixed(1) + 'px ' + SANS_FONT;
+  g.fillStyle = body;
+  const dateStr = days[(rnd() * 7) | 0] + ', ' + (1 + ((rnd() * 28) | 0)) + ' ' +
+                  months[(rnd() * 12) | 0] + ' ' + (2020 + ((rnd() * 6) | 0)) +
+                  '   •   EDISI ' + (100 + ((rnd() * 899) | 0));
+  g.fillText(dateStr, w / 2, y + h * 0.010);
+  y += h * 0.024;
+
+  g.fillStyle = rule;
+  g.fillRect(margin, y, innerW, Math.max(1.5, h * 0.0024));
+  y += h * 0.017;
+
+  const cols = 3;
+  const gutter = w * 0.028;
+  const colW = (innerW - gutter * (cols - 1)) / cols;
+  const colTop = y;
+  const colBottom = h - h * 0.035;
+
+  for (let c = 0; c < cols; c++) {
+    const x = margin + c * (colW + gutter);
+    let cy = colTop;
+
+    g.textAlign = 'left';
+
+    if (c === 0 || rnd() < 0.45) {
+      const hfs = h * 0.0168;
+      g.font = '900 ' + hfs.toFixed(1) + 'px ' + HEAD_FONT;
+      g.fillStyle = ink;
+      const hlLines = 1 + ((rnd() * 2) | 0);
+      for (let i = 0; i < hlLines; i++) {
+        const line = makeLine(g, colW, rnd, hfs * 0.3, 2, 4);
+        g.fillText(line.toUpperCase(), x, cy + hfs);
+        cy += hfs * 1.16;
+      }
+      cy += hfs * 0.28;
+      g.fillStyle = rule;
+      g.fillRect(x, cy, colW, 1);
+      cy += h * 0.013;
+    }
+
+    const fs = h * 0.0122;
+    const lh = fs * 1.56;
+    g.font = fs.toFixed(1) + 'px ' + SERIF_FONT;
+    g.fillStyle = body;
+
+    let guard = 0;
+    while (cy + lh < colBottom && guard++ < 200) {
+
+      if (rnd() < 0.075 && cy > colTop + lh * 4) {
+        const ph = lh * (4.5 + rnd() * 3);
+        if (cy + ph < colBottom - lh * 3) {
+          const lum = dark ? (34 + rnd() * 42) : (116 + rnd() * 70);
+          const pg = g.createLinearGradient(x, cy, x + colW, cy + ph);
+          pg.addColorStop(0, 'rgb(' + (lum | 0) + ',' + (lum | 0) + ',' + ((lum * 1.04) | 0) + ')');
+          pg.addColorStop(1, 'rgb(' + ((lum * 0.55) | 0) + ',' + ((lum * 0.55) | 0) + ',' + ((lum * 0.62) | 0) + ')');
+          g.fillStyle = pg;
+          g.fillRect(x, cy, colW, ph);
+
+          const sg = g.createLinearGradient(x, cy, x, cy + ph);
+          sg.addColorStop(0, 'rgba(255,255,255,0.08)');
+          sg.addColorStop(1, 'rgba(0,0,0,0.22)');
+          g.fillStyle = sg;
+          g.fillRect(x, cy, colW, ph);
+
+          cy += ph + lh * 0.45;
+
+          g.font = 'italic ' + (fs * 0.86).toFixed(1) + 'px ' + SERIF_FONT;
+          g.fillStyle = body;
+          g.fillText(makeLine(g, colW, rnd, fs * 0.4, 3, 7), x, cy);
+          cy += lh * 1.25;
+          g.font = fs.toFixed(1) + 'px ' + SERIF_FONT;
+          g.fillStyle = body;
+          continue;
+        }
+      }
+
+      if (rnd() < 0.035 && cy > colTop + lh * 2) {
+        const sfs = fs * 1.22;
+        g.font = '700 ' + sfs.toFixed(1) + 'px ' + SANS_FONT;
+        g.fillStyle = ink;
+        g.fillText(makeLine(g, colW, rnd, sfs * 0.3, 2, 4).toUpperCase(), x, cy);
+        cy += lh * 1.35;
+        g.font = fs.toFixed(1) + 'px ' + SERIF_FONT;
+        g.fillStyle = body;
+        continue;
+      }
+
+      if (rnd() < 0.02) {
+        g.fillStyle = rule;
+        g.fillRect(x, cy - lh * 0.35, colW, 1);
+        cy += lh * 0.6;
+        continue;
+      }
+
+      g.fillText(makeLine(g, colW, rnd, fs * 0.28, 4, 12), x, cy);
+      cy += lh;
+    }
+
+    if (c < cols - 1) {
+      g.fillStyle = dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.10)';
+      g.fillRect(x + colW + gutter * 0.5 - 0.5, colTop, 1, colBottom - colTop);
+    }
+  }
+
+  g.fillStyle = rule;
+  g.fillRect(margin, h - h * 0.026, innerW, Math.max(1, h * 0.0014));
+}
+
+function renderSimple(g, w, h, seed, s) {
+  const rnd = mulberry32(seed);
+  const dark = s.darkTheme;
+
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.textBaseline = 'middle';
+  g.textAlign = 'center';
+
+  g.fillStyle = dark ? '#0b0c10' : '#f4f1ea';
+  g.fillRect(0, 0, w, h);
+
+  const rg = g.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+  rg.addColorStop(0, dark ? 'rgba(255,214,80,0.13)' : 'rgba(255,180,60,0.22)');
+  rg.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = rg;
+  g.fillRect(0, 0, w, h);
+
+  for (let i = 0; i < 11; i++) {
+    g.save();
+    g.translate(rnd() * w, rnd() * h);
+    g.rotate((rnd() - 0.5) * 0.85);
+    g.font = '900 ' + (h * (0.05 + rnd() * 0.13)).toFixed(1) + 'px ' + TARGET_FONT;
+    g.fillStyle = dark ? 'rgba(255,255,255,0.048)' : 'rgba(0,0,0,0.055)';
+    g.fillText(WORD_BANK[(rnd() * WORD_BANK.length) | 0].toUpperCase(), 0, 0);
+    g.restore();
+  }
+
+  g.save();
+  g.globalAlpha = 0.6;
+  g.fillStyle = g.createPattern(getNoise(dark), 'repeat');
+  g.fillRect(0, 0, w, h);
+  g.restore();
+}
+
+function ensureBackground(seed) {
+  const key = seed + '|' + state.bgStyle + '|' + state.darkTheme + '|' + state.aspect;
+  if (bgCacheKey === key) return;
+  bgCacheKey = key;
+  if (state.bgStyle === 'newspaper') {
+    renderNewspaper(bgCtx, bgCanvas.width, bgCanvas.height, seed, state);
+  } else {
+    renderSimple(bgCtx, bgCanvas.width, bgCanvas.height, seed, state);
+  }
+}
+
+function wrapText(g, text, maxW) {
+  const words = text.split(/\s+/).filter(Boolean);
+  const lines = [];
+  let cur = '';
+  for (let i = 0; i < words.length; i++) {
+    const test = cur ? cur + ' ' + words[i] : words[i];
+    if (!cur || g.measureText(test).width <= maxW) {
+      cur = test;
+    } else {
+      lines.push(cur);
+      cur = words[i];
+    }
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+function makeChannel(src, rgb) {
+  const c = document.createElement('canvas');
+  c.width = src.width;
+  c.height = src.height;
+  const g = c.getContext('2d');
+  g.drawImage(src, 0, 0);
+  g.globalCompositeOperation = 'multiply';
+  g.fillStyle = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+  g.fillRect(0, 0, c.width, c.height);
+  g.globalCompositeOperation = 'destination-in';
+  g.drawImage(src, 0, 0);
+  g.globalCompositeOperation = 'source-over';
+  return c;
+}
+
+function buildTextLayer() {
+  const W = dims.W, H = dims.H;
+  const raw = (state.text || '').trim() || 'TEXT MATCH CUT';
+  const zoom = state.zoom / 100;
+
+  const maxW = W * 0.84;
+  const maxH = H * 0.66;
+
+  const paras = raw.split(/\n+/).map(function (p) { return p.trim(); })
+                    .filter(Boolean)
+                    .map(function (p) { return p.toUpperCase(); });
+  if (!paras.length) paras.push('TEXT MATCH CUT');
+
+  let fs = Math.round(W * 0.17 * zoom);
+  if (fs < 10) fs = 10;
+
+  let lines = [];
+
+  function layout() {
+    mctx.font = '900 ' + fs + 'px ' + TARGET_FONT;
+    const out = [];
+    for (let i = 0; i < paras.length; i++) {
+      const l = wrapText(mctx, paras[i], maxW);
+      for (let k = 0; k < l.length; k++) out.push(l[k]);
+    }
+    return out;
+  }
+
+  let safety = 0;
+  while (fs > 10 && safety++ < 200) {
+    lines = layout();
+    const lh = fs * 1.14;
+    const totalH = lines.length * lh;
+    let widest = 0;
+    for (let i = 0; i < lines.length; i++) {
+      const wd = mctx.measureText(lines[i]).width;
+      if (wd > widest) widest = wd;
+    }
+    if (lines.length <= 6 && totalH <= maxH && widest <= maxW) break;
+    fs -= 2;
+  }
+
+  if (!lines.length) lines = ['TEXT MATCH CUT'];
+
+  const lh = fs * 1.14;
+  const padX = fs * 0.34;
+  const padY = fs * 0.16;
+  const padExtra = fs * 0.5;
+
+  let maxLineW = 1;
+  for (let i = 0; i < lines.length; i++) {
+    const wd = mctx.measureText(lines[i]).width;
+    if (wd > maxLineW) maxLineW = wd;
+  }
+
+  const blockW = Math.ceil(maxLineW + padX * 2 + padExtra);
+  const blockH = Math.ceil(lines.length * lh + padY * 2 + padExtra);
+
+  const c = document.createElement('canvas');
+  c.width = Math.max(4, blockW);
+  c.height = Math.max(4, blockH);
+  const g = c.getContext('2d');
+
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  g.font = '900 ' + fs + 'px ' + TARGET_FONT;
+
+  const cx = c.width / 2;
+  const top = (c.height - lines.length * lh) / 2;
+
+  if (state.highlight) {
+    const boxW = maxLineW + padX * 2;
+    const boxH = lines.length * lh + padY * 2;
+    const bx = cx - boxW / 2;
+    const by = (c.height - boxH) / 2;
+    roundRect(g, bx, by, boxW, boxH, Math.max(4, fs * 0.16));
+    g.fillStyle = state.highlightColor;
+    g.fill();
+
+    const hg = g.createLinearGradient(0, by, 0, by + boxH);
+    hg.addColorStop(0, 'rgba(255,255,255,0.22)');
+    hg.addColorStop(0.5, 'rgba(255,255,255,0.0)');
+    hg.addColorStop(1, 'rgba(0,0,0,0.10)');
+    g.fillStyle = hg;
+    g.fill();
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const y = top + lh * i + lh / 2;
+
+    if (state.highlight) {
+      g.fillStyle = '#0B0B0B';
+      g.fillText(lines[i], cx, y);
+    } else {
+      g.lineJoin = 'round';
+      g.miterLimit = 2;
+      g.lineWidth = Math.max(2, fs * 0.14);
+      g.strokeStyle = state.darkTheme ? 'rgba(0,0,0,0.92)' : 'rgba(255,255,255,0.95)';
+      g.strokeText(lines[i], cx, y);
+      g.fillStyle = state.darkTheme ? '#FFFFFF' : '#0A0A0A';
+      g.fillText(lines[i], cx, y);
+    }
+  }
+
+  textLayer = { canvas: c, w: c.width, h: c.height };
+
+  if (state.chromatic) {
+    chR = makeChannel(c, [255, 0, 0]);
+    chG = makeChannel(c, [0, 255, 0]);
+    chB = makeChannel(c, [0, 0, 255]);
+
+    chOffMax = Math.max(6, Math.ceil(dims.W * 0.004 * 3.6));
+    const cw = c.width + chOffMax * 2;
+    const chh = c.height;
+
+    if (!chCanvas || chCanvas.width !== cw || chCanvas.height !== chh) {
+      chCanvas = document.createElement('canvas');
+      chCanvas.width = cw;
+      chCanvas.height = chh;
+      chCtx = chCanvas.getContext('2d');
+    }
+  }
+}
+
+function setupCanvases() {
+  const a = ASPECTS[state.aspect];
+  dims = { W: a.w, H: a.h };
+
+  previewCanvas.width = a.w;
+  previewCanvas.height = a.h;
+
+  ctx = previewCanvas.getContext('2d', { alpha: false });
+
+  const bw = Math.max(64, Math.round(a.w * BG_SCALE));
+  const bh = Math.max(64, Math.round(a.h * BG_SCALE));
+
+  bgCanvas = document.createElement('canvas');
+  bgCanvas.width = bw;
+  bgCanvas.height = bh;
+  bgCtx = bgCanvas.getContext('2d');
+
+  fxCanvas = document.createElement('canvas');
+  fxCanvas.width = bw;
+  fxCanvas.height = bh;
+  fxCtx = fxCanvas.getContext('2d');
+
+  bgCacheKey = null;
+
+  buildTextLayer();
+  updateBadge();
+  markDirty();
+}
+
+function updateBadge() {
+  const a = ASPECTS[state.aspect];
+  const el = $('#canvasBadge');
+  if (el) el.textContent = state.aspect + ' · ' + a.w + '×' + a.h;
+}
+
+function drawBgLayer(g, W, H, scale, ox, oy, rot) {
+  g.save();
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.imageSmoothingEnabled = true;
+  if ('imageSmoothingQuality' in g) g.imageSmoothingQuality = 'high';
+  g.translate(W / 2 + ox, H / 2 + oy);
+  g.rotate(rot);
+  g.scale(scale, scale);
+  g.drawImage(bgCanvas, -W / 2, -H / 2, W, H);
+  g.restore();
+}
+
+function drawBlurLayer(scale, ox, oy, rot, g) {
+  const W = dims.W, H = dims.H;
+  const bw = fxCanvas.width, bh = fxCanvas.height;
+  const k = bw / W;
+
+  const basePx = { low: 9, medium: 20, high: 38 }[state.blurIntensity] * (W / 1080);
+  const blurPx = Math.max(0.6, basePx * k);
+
+  fxCtx.setTransform(1, 0, 0, 1, 0, 0);
+  fxCtx.globalAlpha = 1;
+  fxCtx.globalCompositeOperation = 'source-over';
+  fxCtx.filter = 'none';
+  fxCtx.fillStyle = state.darkTheme ? '#0a0b0d' : '#e9e3d6';
+  fxCtx.fillRect(0, 0, bw, bh);
+
+  fxCtx.save();
+  fxCtx.filter = 'blur(' + blurPx.toFixed(2) + 'px)';
+  fxCtx.translate(bw / 2 + ox * k, bh / 2 + oy * k);
+  fxCtx.rotate(rot);
+  const s = scale * k * 1.09;
+  fxCtx.scale(s, s);
+  fxCtx.drawImage(bgCanvas, -W / 2, -H / 2, W, H);
+  fxCtx.restore();
+
+  fxCtx.globalCompositeOperation = 'destination-in';
+  fxCtx.filter = 'none';
+
+  let grad;
+  const c01 = clamp(0.5 + (state.posY / 100) * 0.42, 0.12, 0.88);
+
+  if (state.blurType === 'vertical') {
+    grad = fxCtx.createLinearGradient(0, 0, 0, bh);
+    const a = clamp(c01 - 0.30, 0, 1);
+    const b = clamp(c01 + 0.30, 0, 1);
+    grad.addColorStop(0, 'rgba(0,0,0,1)');
+    if (a > 0.001) grad.addColorStop(a, 'rgba(0,0,0,0)');
+    if (b < 0.999) grad.addColorStop(b, 'rgba(0,0,0,0)');
+    grad.addColorStop(1, 'rgba(0,0,0,1)');
+  } else {
+    const ccx = bw / 2 + (state.posX / 100) * bw * 0.18;
+    const ccy = bh / 2 + (state.posY / 100) * bh * 0.18;
+    const r0 = Math.min(bw, bh) * 0.10;
+    const r1 = Math.max(bw, bh) * 0.64;
+    grad = fxCtx.createRadialGradient(ccx, ccy, r0, ccx, ccy, r1);
+    grad.addColorStop(0, 'rgba(0,0,0,0)');
+    grad.addColorStop(0.55, 'rgba(0,0,0,0.55)');
+    grad.addColorStop(1, 'rgba(0,0,0,1)');
+  }
+
+  fxCtx.fillStyle = grad;
+  fxCtx.fillRect(0, 0, bw, bh);
+  fxCtx.globalCompositeOperation = 'source-over';
+
+  g.save();
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.imageSmoothingEnabled = true;
+  if ('imageSmoothingQuality' in g) g.imageSmoothingQuality = 'high';
+  g.drawImage(fxCanvas, 0, 0, bw, bh, 0, 0, W, H);
+  g.restore();
+}
+
+function drawOverlays(g, f) {
+  const W = dims.W, H = dims.H;
+
+  const vg = g.createRadialGradient(
+    W / 2, H / 2, Math.min(W, H) * 0.24,
+    W / 2, H / 2, Math.max(W, H) * 0.76
+  );
+  vg.addColorStop(0, 'rgba(0,0,0,0)');
+  vg.addColorStop(1, state.darkTheme ? 'rgba(0,0,0,0.55)' : 'rgba(0,0,0,0.30)');
+  g.fillStyle = vg;
+  g.fillRect(0, 0, W, H);
+
+  const pat = getGrainPattern(g);
+  if (pat) {
+    g.save();
+    g.globalAlpha = state.darkTheme ? 0.055 : 0.045;
+    g.globalCompositeOperation = 'overlay';
+    g.filter = 'none';
+    const nx = Math.floor(nz(f + 1.7) * 200);
+    const ny = Math.floor(nz(f + 33.3) * 200);
+    g.translate(-nx, -ny);
+    g.fillStyle = pat;
+    g.fillRect(0, 0, W + 220, H + 220);
+    g.restore();
+  }
+}
+
+function drawTargetText(g, f, local, t) {
+  if (!textLayer) return;
+
+  const W = dims.W, H = dims.H;
+
+  const cx = W / 2 + (state.posX / 100) * (W * 0.35);
+  const cy = H / 2 + (state.posY / 100) * (H * 0.35);
+
+  const punch = 1 + 0.014 * Math.pow(1 - t, 3);
+
+  g.save();
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.imageSmoothingEnabled = true;
+  if ('imageSmoothingQuality' in g) g.imageSmoothingQuality = 'high';
+
+  g.translate(cx, cy);
+  g.scale(punch, punch);
+
+  if (!state.chromatic || !chCanvas || !chR || !chG || !chB) {
+    g.drawImage(textLayer.canvas, -textLayer.w / 2, -textLayer.h / 2);
+  } else {
+    const baseOff = W * 0.004;
+    const spike = local === 0 ? 3.4 : (local === 1 ? 1.7 : 1.0);
+    const jit = 0.65 + nz(f * 1.37) * 0.7;
+    let off = baseOff * spike * jit;
+    if (off > chOffMax) off = chOffMax;
+    if (off < 0) off = 0;
+
+    chCtx.setTransform(1, 0, 0, 1, 0, 0);
+    chCtx.globalCompositeOperation = 'source-over';
+    chCtx.globalAlpha = 1;
+    chCtx.clearRect(0, 0, chCanvas.width, chCanvas.height);
+
+    chCtx.globalCompositeOperation = 'lighter';
+    chCtx.drawImage(chR, chOffMax - off, 0);
+    chCtx.drawImage(chG, chOffMax, 0);
+    chCtx.drawImage(chB, chOffMax + off, 0);
+    chCtx.globalCompositeOperation = 'source-over';
+
+    g.drawImage(chCanvas, -chCanvas.width / 2, -chCanvas.height / 2);
+  }
+
+  g.restore();
+}
+
+function renderFrame(f, targetCtx) {
+  const g = targetCtx || ctx;
+  if (!g || !bgCanvas) return;
+
+  const W = dims.W, H = dims.H;
+
+  const cut = Math.floor(f / CUT_FRAMES) % CUTS;
+  const local = f % CUT_FRAMES;
+  const t = local / CUT_FRAMES;
+  const dynamic = state.bgType === 'dynamic';
+  const seed = dynamic ? (BASE_SEED + cut * 7919) : BASE_SEED;
+
+  ensureBackground(seed);
+
+  let scale, ox, oy, rot;
+
+  if (dynamic) {
+    const j = mulberry32(seed ^ 0x9E3779B9);
+    scale = 1.12 + j() * 0.10 + t * 0.075;
+    ox = (j() - 0.5) * W * 0.10;
+    oy = (j() - 0.5) * H * 0.10;
+    rot = (j() - 0.5) * 0.022;
+  } else {
+    const p = (f / TOTAL_FRAMES) * Math.PI * 2;
+    scale = 1.20 + 0.05 * Math.sin(p);
+    ox = Math.sin(p) * W * 0.02;
+    oy = Math.cos(p) * H * 0.02;
+    rot = Math.sin(p) * 0.005;
+  }
+
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.globalAlpha = 1;
+  g.globalCompositeOperation = 'source-over';
+  g.filter = 'none';
+  g.fillStyle = state.darkTheme ? '#0a0b0d' : '#e9e3d6';
+  g.fillRect(0, 0, W, H);
+
+  drawBgLayer(g, W, H, scale, ox, oy, rot);
+
+  if (supportsFilter) drawBlurLayer(scale, ox, oy, rot, g);
+
+  drawOverlays(g, f);
+
+  drawTargetText(g, f, local, t);
+}
+
+function loop(ts) {
+  requestAnimationFrame(loop);
+
+  if (!lastTs) lastTs = ts;
+  let dt = ts - lastTs;
+  lastTs = ts;
+  if (dt > 250) dt = 250;
+
+  if (isPlaying) {
+    acc += dt;
+    const step = 1000 / FPS;
+    let advanced = false;
+    while (acc >= step) {
+      acc -= step;
+      currentFrame = (currentFrame + 1) % TOTAL_FRAMES;
+      advanced = true;
+    }
+    if (advanced) {
+      dirty = true;
+      syncScrub();
+    }
+  }
+
+  if (dirty) {
+    renderFrame(currentFrame, ctx);
+    dirty = false;
+  }
+}
+
+function syncScrub() {
+  const s = $('#scrub');
+  if (s && document.activeElement !== s) s.value = String(currentFrame);
+  const lbl = $('#frameLabel');
+  if (lbl) {
+    lbl.textContent = String(currentFrame + 1).padStart(3, '0') + ' / ' + TOTAL_FRAMES;
+  }
+}
+
+let exportCanvas = null;
+let exportCtx = null;
+let lastBlobUrl = null;
+let lastBlob = null;
+let lastExt = 'webm';
+
+function pickMime() {
+  if (typeof MediaRecorder === 'undefined') return '';
+  const candidates = [
+    'video/mp4;codecs=avc1.42E01E',
+    'video/mp4;codecs=avc1',
+    'video/mp4',
+    'video/webm;codecs=vp9',
+    'video/webm;codecs=vp8',
+    'video/webm'
+  ];
+  for (let i = 0; i < candidates.length; i++) {
+    try {
+      if (MediaRecorder.isTypeSupported(candidates[i])) return candidates[i];
+    } catch (e) { /* ignore */ }
+  }
+  return '';
+}
+
+function setProgress(p) {
+  const pct = Math.round(clamp(p, 0, 1) * 100);
+  const bar = $('#progressBar');
+  const txt = $('#progressText');
+  if (bar) bar.style.width = pct + '%';
+  if (txt) txt.textContent = pct + '%';
+}
+
+function showOverlay(show) {
+  const el = $('#renderOverlay');
+  if (!el) return;
+  if (show) {
+    el.classList.remove('hidden');
+    el.classList.add('flex');
+  } else {
+    el.classList.add('hidden');
+    el.classList.remove('flex');
+  }
+}
+
+function showPreviewView(show) {
+  const ed = $('#editorView');
+  const pv = $('#previewView');
+  if (show) {
+    ed.classList.add('hidden');
+    ed.classList.remove('flex');
+    pv.classList.remove('hidden');
+    pv.classList.add('flex');
+  } else {
+    pv.classList.add('hidden');
+    pv.classList.remove('flex');
+    ed.classList.remove('hidden');
+    ed.classList.add('flex');
+    lastTs = 0;
+    acc = 0;
+    markDirty();
+  }
+}
+
+async function generateVideo() {
+  if (typeof MediaRecorder === 'undefined') {
+    alert('Your browser does not support MediaRecorder. Please use a recent version of Chrome, Edge, Firefox or Safari.');
+    return;
+  }
+
+  const createBtn = $('#createBtn');
+  createBtn.disabled = true;
+
+  showOverlay(true);
+  setProgress(0);
+
+  showPreviewView(false);
+
+  const W = dims.W, H = dims.H;
+
+  if (!exportCanvas) {
+    exportCanvas = document.createElement('canvas');
+    exportCtx = exportCanvas.getContext('2d', { alpha: false });
+    $('#exportStage').appendChild(exportCanvas);
+  }
+  exportCanvas.width = W;
+  exportCanvas.height = H;
+
+  renderFrame(0, exportCtx);
+
+  await new Promise(function (r) { requestAnimationFrame(function () { requestAnimationFrame(r); }); });
+
+  let stream;
+  try {
+    stream = exportCanvas.captureStream(FPS);
+  } catch (e) {
+    showOverlay(false);
+    createBtn.disabled = false;
+    alert('Canvas capture is not supported in this browser.');
+    return;
+  }
+
+  const mime = pickMime();
+  lastExt = (mime && mime.indexOf('mp4') !== -1) ? 'mp4' : 'webm';
+
+  let rec;
+  try {
+    const opts = { videoBitsPerSecond: 14000000 };
+    if (mime) opts.mimeType = mime;
+    rec = new MediaRecorder(stream, opts);
+  } catch (e) {
+    try {
+      rec = new MediaRecorder(stream);
+      lastExt = 'webm';
+    } catch (e2) {
+      showOverlay(false);
+      createBtn.disabled = false;
+      alert('Unable to start the video recorder in this browser.');
+      return;
+    }
+  }
+
+  const chunks = [];
+  rec.ondataavailable = function (e) {
+    if (e.data && e.data.size) chunks.push(e.data);
+  };
+
+  const stopped = new Promise(function (resolve) { rec.onstop = resolve; });
+
+  try {
+    rec.start(150);
+  } catch (e) {
+    showOverlay(false);
+    createBtn.disabled = false;
+    alert('Failed to start recording: ' + e.message);
+    return;
+  }
+
+  await new Promise(function (r) { requestAnimationFrame(function () { requestAnimationFrame(r); }); });
+
+  await new Promise(function (resolve) {
+    let f = 0;
+    const t0 = performance.now();
+    const frameMs = 1000 / FPS;
+
+    function tick(now) {
+      const elapsed = now - t0;
+      const target = Math.floor(elapsed / frameMs);
+
+      let budget = 6;
+      while (f <= target && f < TOTAL_FRAMES && budget-- > 0) {
+        renderFrame(f, exportCtx);
+        f++;
+      }
+
+      setProgress(f / TOTAL_FRAMES);
+
+      if (f >= TOTAL_FRAMES) {
+        resolve();
+      } else {
+        requestAnimationFrame(tick);
+      }
+    }
+    requestAnimationFrame(tick);
+  });
+
+  await new Promise(function (r) { setTimeout(r, 260); });
+
+  try { rec.stop(); } catch (e) { /* ignore */ }
+  await stopped;
+
+  try { stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) { /* ignore */ }
+
+  const blobType = (mime && mime.indexOf('mp4') !== -1) ? 'video/mp4' : 'video/webm';
+  const blob = new Blob(chunks, { type: blobType });
+
+  if (lastBlobUrl) {
+    try { URL.revokeObjectURL(lastBlobUrl); } catch (e) { /* ignore */ }
+  }
+  lastBlob = blob;
+  lastBlobUrl = URL.createObjectURL(blob);
+
+  const video = $('#resultVideo');
+  video.src = lastBlobUrl;
+  video.muted = true;
+  video.loop = true;
+
+  try { await video.play(); } catch (e) { /* ignore */ }
+
+  const dl = $('#downloadBtn');
+  dl.textContent = '⬇ Download ' + lastExt.toUpperCase() + ' Video';
+
+  setProgress(1);
+  showOverlay(false);
+  showPreviewView(true);
+  createBtn.disabled = false;
+}
+
+function setSegmentActive(seg, value) {
+  const btns = seg.querySelectorAll('button');
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].classList.toggle('active', btns[i].dataset.value === value);
+  }
+}
+
+function syncSwatch() {
+  const swatches = document.querySelectorAll('.swatch');
+  for (let i = 0; i < swatches.length; i++) {
+    const isActive = swatches[i].dataset.color.toUpperCase() === state.highlightColor.toUpperCase();
+    swatches[i].classList.toggle('ring-2', isActive);
+    swatches[i].classList.toggle('ring-offset-2', isActive);
+    swatches[i].classList.toggle('ring-offset-[#0e0f12]', isActive);
+    swatches[i].classList.toggle('ring-white', isActive);
+    swatches[i].classList.toggle('ring-1', !isActive);
+    swatches[i].classList.toggle('ring-white/10', !isActive);
+    swatches[i].style.outline = isActive ? '2px solid rgba(255,216,77,.7)' : 'none';
+    swatches[i].style.outlineOffset = isActive ? '2px' : '0';
+  }
+}
+
+function resetAll() {
+  Object.assign(state, DEFAULTS);
+
+  $('#textInput').value = state.text;
+  $('#tgDark').checked = state.darkTheme;
+  $('#tgHighlight').checked = state.highlight;
+  $('#tgChroma').checked = state.chromatic;
+
+  setSegmentActive($('#aspectSeg'), state.aspect);
+  setSegmentActive(document.querySelector('.seg[data-key="bgType"]'), state.bgType);
+  setSegmentActive(document.querySelector('.seg[data-key="bgStyle"]'), state.bgStyle);
+  setSegmentActive(document.querySelector('.seg[data-key="blurType"]'), state.blurType);
+  setSegmentActive(document.querySelector('.seg[data-key="blurIntensity"]'), state.blurIntensity);
+
+  $('#posX').value = state.posX;
+  $('#posY').value = state.posY;
+  $('#zoom').value = state.zoom;
+  $('#posXVal').textContent = state.posX + '%';
+  $('#posYVal').textContent = state.posY + '%';
+  $('#zoomVal').textContent = state.zoom + '%';
+
+  syncSwatch();
+  setupCanvases();
+}
+
+function init() {
+  previewCanvas = $('#previewCanvas');
+
+  measureCanvas = document.createElement('canvas');
+  measureCanvas.width = 8;
+  measureCanvas.height = 8;
+  mctx = measureCanvas.getContext('2d');
+
+  const segs = document.querySelectorAll('.seg');
+  for (let i = 0; i < segs.length; i++) {
+    (function (seg) {
+      const key = seg.dataset.key;
+      if (!key) return;
+      seg.addEventListener('click', function (ev) {
+        const btn = ev.target.closest('button');
+        if (!btn || !seg.contains(btn)) return;
+
+        setSegmentActive(seg, btn.dataset.value);
+        state[key] = btn.dataset.value;
+
+        if (key === 'aspect') {
+          setupCanvases();
+        } else if (key === 'bgType' || key === 'bgStyle') {
+          bgCacheKey = null;
+          markDirty();
+        } else {
+          markDirty();
+        }
+      });
+    })(segs[i]);
+  }
+
+  $('#tgDark').addEventListener('change', function (e) {
+    state.darkTheme = e.target.checked;
+    bgCacheKey = null;
+    buildTextLayer();
+    markDirty();
+  });
+
+  $('#tgHighlight').addEventListener('change', function (e) {
+    state.highlight = e.target.checked;
+    buildTextLayer();
+    markDirty();
+  });
+
+  $('#tgChroma').addEventListener('change', function (e) {
+    state.chromatic = e.target.checked;
+    buildTextLayer();
+    markDirty();
+  });
+
+  document.querySelectorAll('.swatch').forEach(function (sw) {
+    sw.addEventListener('click', function () {
+      state.highlightColor = sw.dataset.color;
+      syncSwatch();
+      buildTextLayer();
+      markDirty();
+    });
+  });
+
+  $('#posX').addEventListener('input', function (e) {
+    state.posX = parseInt(e.target.value, 10);
+    $('#posXVal').textContent = state.posX + '%';
+    markDirty();
+  });
+
+  $('#posY').addEventListener('input', function (e) {
+    state.posY = parseInt(e.target.value, 10);
+    $('#posYVal').textContent = state.posY + '%';
+    markDirty();
+  });
+
+  $('#zoom').addEventListener('input', function (e) {
+    state.zoom = parseInt(e.target.value, 10);
+    $('#zoomVal').textContent = state.zoom + '%';
+    buildTextLayer();
+    markDirty();
+  });
+
+  const textInput = $('#textInput');
+  let textTimer = null;
+  textInput.addEventListener('input', function () {
+    state.text = textInput.value;
+    if (textTimer) clearTimeout(textTimer);
+    textTimer = setTimeout(function () {
+      buildTextLayer();
+      markDirty();
+    }, 60);
+  });
+
+  $('#playBtn').addEventListener('click', function () {
+    isPlaying = !isPlaying;
+    lastTs = 0;
+    acc = 0;
+    const icon = $('#playIcon');
+    if (isPlaying) {
+      icon.innerHTML = '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
+    } else {
+      icon.innerHTML = '<path d="M7 4.5v15l13-7.5z"/>';
+    }
+  });
+
+  const scrub = $('#scrub');
+  scrub.max = String(TOTAL_FRAMES - 1);
+  scrub.addEventListener('input', function (e) {
+    isPlaying = false;
+    const icon = $('#playIcon');
+    icon.innerHTML = '<path d="M7 4.5v15l13-7.5z"/>';
+    currentFrame = parseInt(e.target.value, 10) || 0;
+    syncScrub();
+    markDirty();
+  });
+
+  $('#resetBtn').addEventListener('click', resetAll);
+
+  $('#createBtn').addEventListener('click', function () {
+    if (isPlaying) {
+      isPlaying = false;
+      $('#playIcon').innerHTML = '<path d="M7 4.5v15l13-7.5z"/>';
+    }
+    generateVideo();
+  });
+
+  $('#backBtn').addEventListener('click', function () {
+    showPreviewView(false);
+  });
+
+  $('#regenBtn').addEventListener('click', function () {
+    generateVideo();
+  });
+
+  $('#downloadBtn').addEventListener('click', function () {
+    if (!lastBlob) return;
+    const a = document.createElement('a');
+    a.href = lastBlobUrl;
+    a.download = 'text-match-cut-' + Date.now() + '.' + lastExt;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Space' && e.target.tagName !== 'TEXTAREA' && e.target.tagName !== 'INPUT') {
+      e.preventDefault();
+      $('#playBtn').click();
+    }
+  });
+
+  syncSwatch();
+  setupCanvases();
+  syncScrub();
+  requestAnimationFrame(loop);
+
+  const fontLoads = [
+    document.fonts.load('900 100px "Anton"'),
+    document.fonts.load('900 100px "Archivo Black"'),
+    document.fonts.load('400 16px "Inter"'),
+    document.fonts.load('900 40px "Playfair Display"')
+  ];
+  Promise.all(fontLoads)
+    .catch(function () { /* ignore */ })
+    .then(function () { return document.fonts.ready; })
+    .then(function () {
+      buildTextLayer();
+      markDirty();
+    })
+    .catch(function () { /* ignore */ });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+/* ==================== PWA Service Worker Registration ==================== */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      console.log('[PWA] Service worker registered:', reg.scope);
+    }).catch(function (err) {
+      console.warn('[PWA] SW registration failed:', err);
+    });
+  });
+}
+
+})();
+</script>
+</body>
+</html>
